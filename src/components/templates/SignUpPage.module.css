@@ -1,0 +1,60 @@
+.container {
+    display: flex;
+    align-items: stretch;
+    width: fit-content;
+    margin: 50px auto;
+}
+
+.container form {
+    border: 2px solid rgb(206, 64, 64);
+    border-left: none;
+    border-radius: 10px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    width: fit-content;
+    padding: 20px;
+}
+
+.container form div {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px auto;
+    align-items: center;
+}
+
+
+.container label {
+    color: rgb(206, 64, 64);
+}
+
+.container input {
+    outline: none;
+    border : 1px solid rgb(206, 64, 64);
+    border-radius: 7px;
+    padding: 5px;
+}
+
+.container button {
+    display: flex;
+    margin: 25px auto;
+    padding: 7px 20%;
+    background-color: rgb(206, 64, 64);
+    color: white;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 7px;
+}
+
+.image img {
+    opacity: 0.85;
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+    height: 100%;
+}
+
+
+.link p {
+  color: blue;
+  margin-right: 30px ;
+}

@@ -9,9 +9,13 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "mongoose": "^8.0.3",
+    "next": "latest",
+    "next-auth": "^4.24.5",
     "react": "latest",
     "react-dom": "latest",
-    "next": "latest"
+    "react-hot-toast": "^2.4.1"
   },
   "devDependencies": {
     "eslint": "latest",
