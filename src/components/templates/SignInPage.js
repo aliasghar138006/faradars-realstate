@@ -1,15 +1,13 @@
 "use client";
-
 import Image from "next/image";
-import { useState } from "react";
-import styles from "@/components/templates/SignUpPage.module.css";
 import Link from "next/link";
-import { signIn } from "next-auth/react";
-import { Toaster } from "react-hot-toast";
-import toast from "react-hot-toast";
+import React, { useState } from "react";
+import styles from "@/components/templates/Signup.module.css";
+import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 
-function SignInPage(props) {
+function SigninPage(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -22,12 +20,11 @@ function SignInPage(props) {
       password,
       redirect: false,
     });
-
-    if (res.error) {
-      toast("خطایی رخ داده است");
-    } else {
+    if (!res.error) {
       toast.success("ورود با موفقیت انجام شد");
       router.push("/account");
+    } else {
+      toast.error(res.error);
     }
   };
   return (
@@ -71,4 +68,4 @@ function SignInPage(props) {
   );
 }
 
-export default SignInPage;
+export default SigninPage;

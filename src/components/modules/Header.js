@@ -1,7 +1,11 @@
+"use client";
 import Link from "next/link";
 import styles from "@/components/modules/Header.module.css";
+import { useSession } from "next-auth/react";
 
 function Header() {
+  const { data } = useSession();
+
   return (
     <div className={styles.container}>
       <div className={styles.right}>
@@ -10,7 +14,11 @@ function Header() {
       </div>
       <div className={styles.left}>
         <div className={styles.login}>
-          <Link href="/login">ورود</Link>
+          {!data ? (
+            <Link href="/signin">ورود</Link>
+          ) : (
+            <Link href="/account">حساب کاربری</Link>
+          )}
         </div>
       </div>
     </div>

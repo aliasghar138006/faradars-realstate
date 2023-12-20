@@ -4,7 +4,7 @@ import { VerifyPassword } from "@/utils/operations/Password";
 import NextAuth from "next-auth/next";
 import CredentialsProvider from "next-auth/providers/credentials";
 
-const authOptions = {
+export const authOptions = {
   session: { strategy: "jwt" },
   providers: [
     CredentialsProvider({

@@ -1,15 +1,9 @@
-import SigninPage from "@/components/templates/SigninPage";
 import { getServerSession } from "next-auth";
-import React from "react";
 import { authOptions } from "../api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
 
-async function page(props) {
+export default async function AccountLayout({ children }) {
   const session = await getServerSession(authOptions);
-  if (session) {
-    redirect("/account");
-  }
-  return <SigninPage />;
+  if (!session) redirect("/signin");
+  return <div>{children}</div>;
 }
-
-export default page;

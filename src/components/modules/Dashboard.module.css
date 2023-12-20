@@ -1,0 +1,20 @@
+.container {
+
+}
+
+.container h3 {
+    color: rgb(206, 64, 64);
+}
+
+.info {
+    width: 500px;
+    border: 3px solid rgb(206, 64, 64);
+    border-radius: 10px;
+    padding: 20px 30px;
+}
+
+.info div{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

@@ -1,9 +1,8 @@
 "use client";
-
 import Image from "next/image";
-import { useState } from "react";
-import styles from "@/components/templates/SignUpPage.module.css";
 import Link from "next/link";
+import React, { useState } from "react";
+import styles from "@/components/templates/Signup.module.css";
 import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
@@ -25,7 +24,7 @@ function SignupPage(props) {
     const data = await res.json();
     if (data.status === 201) {
       toast.success(data.message);
-      router.push("/signin");
+      router.push("signin");
     } else {
       toast.error(data.message);
     }
