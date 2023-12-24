@@ -1,11 +1,11 @@
-import Dashboard from "@/components/modules/Dashboard";
 import AccountPage from "@/components/templates/AccountPage";
+import AddPage from "@/components/templates/AddPage";
 import React from "react";
 
-function page(props) {
+function page() {
   return (
     <AccountPage>
-      <Dashboard />
+      <AddPage />
     </AccountPage>
   );
 }

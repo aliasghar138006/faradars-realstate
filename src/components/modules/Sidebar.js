@@ -1,6 +1,6 @@
+import styles from "@/components/templates/Account.module.css";
 import Link from "next/link";
 import { CgProfile } from "react-icons/cg";
-import styles from "@/components/templates/Account.module.css";
 
 function Sidebar(props) {
   return (

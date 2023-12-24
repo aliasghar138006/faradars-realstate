@@ -3,13 +3,13 @@ import styles from "@/components/modules/Dashboard.module.css";
 import User from "@/models/User";
 import Connect from "@/utils/Connect";
 import { getServerSession } from "next-auth";
+
 async function Dashboard() {
   const {
     user: { email },
   } = await getServerSession(authOptions);
   await Connect();
   const { createdAt } = await User.findOne({ email });
-  console.log(createdAt);
   return (
     <div className={styles.container}>
       <h3>خوش آمدید🌹</h3>

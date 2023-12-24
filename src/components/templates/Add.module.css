@@ -1,0 +1,79 @@
+.container {
+    width: 700px;
+}
+
+.container h3 , .container h4 {
+    color: rgb(206, 64, 64);
+}
+
+.fields {
+   display: flex;
+   flex-wrap: wrap;
+   row-gap: 30px;
+   column-gap: 50px;
+}
+
+
+
+.fields div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50px;
+}
+
+.fields input {
+    border: none;
+    border-bottom: 2px solid rgb(206, 64, 64) ;
+    outline: none;
+    font-weight: bold;
+
+}
+
+.add {
+    color: white;
+    width: fit-content;
+    margin: 50px 0px;
+    background-color: rgb(206, 64, 64);
+    padding: 5px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+
+
+.category{
+    display: flex;
+    justify-content: space-between;
+}
+
+.category input {
+   accent-color: rgb(206, 64, 64);
+}
+
+.options {
+    
+}
+
+.options .btn {
+    padding: 5px;
+    color: white;
+    background-color: rgb(206, 64, 64);
+    border-radius: 10px;
+    width: fit-content;
+    text-align: center;
+    margin-right: 10px;
+    cursor: pointer;
+    margin: 0px 10px;
+}
+
+.options input {
+    outline: none;
+    border: 2px solid rgb(206, 64, 64);
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.options div {
+    display: flex;
+    margin: 10px 0px;
+}
