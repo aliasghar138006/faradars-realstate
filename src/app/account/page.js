@@ -3,11 +3,7 @@ import AccountPage from "@/components/templates/AccountPage";
 import React from "react";
 
 function page(props) {
-  return (
-    <AccountPage>
-      <Dashboard />
-    </AccountPage>
-  );
+  return <Dashboard />;
 }
 
 export default page;

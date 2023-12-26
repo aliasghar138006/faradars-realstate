@@ -3,11 +3,7 @@ import AddPage from "@/components/templates/AddPage";
 import React from "react";
 
 function page(props) {
-  return (
-    <AccountPage>
-      <AddPage />
-    </AccountPage>
-  );
+  return <AddPage />;
 }
 
 export default page;

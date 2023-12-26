@@ -12,7 +12,9 @@ function CustomDatePicker({ data, setData }) {
         locale={persian_fa}
         calendarPosition="bottom-right"
         value={data.constructionDate}
-        onChange={(e) => setData({ ...data, constructionDate: new Date(e) })}
+        onChange={(e) => {
+          setData({ ...data, constructionDate: new Date(e) });
+        }}
       />
     </div>
   );

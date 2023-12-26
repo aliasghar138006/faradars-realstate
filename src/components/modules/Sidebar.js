@@ -10,7 +10,7 @@ function Sidebar(props) {
       </div>
       <div className={styles.menu}>
         <Link href="/account">داشبورد</Link>
-        <Link href="/my-advertising">آگهی های من</Link>
+        <Link href="/account/my-advertising">آگهی های من</Link>
         <Link href="/account/add">ثبت آگهی</Link>
         <Link href="/">خروج</Link>
       </div>
