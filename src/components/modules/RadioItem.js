@@ -1,8 +1,7 @@
-import styles from "@/components/templates/Add.module.css";
+import React from "react";
 
 function RadioItem({ title, name, data, setData }) {
   const { category } = data;
-
   const changeHandler = (e) => {
     const { name, value } = e.target;
     setData({ ...data, [name]: value });

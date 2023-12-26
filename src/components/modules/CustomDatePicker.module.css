@@ -1,0 +1,8 @@
+.container p {
+    color: rgb(206, 64, 64);
+}
+
+.container input {
+    font-weight: bold;
+    border: 2px solid rgb(206, 64, 64);
+}

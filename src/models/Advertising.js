@@ -25,7 +25,7 @@ const advertisingSchema = new Schema(
     },
     category: {
       type: String,
-      enum: ["villa", "store", "office", "apartment"],
+      enum: ["villa", "store", "office", "appartment"],
       required: true,
     },
     amenities: {

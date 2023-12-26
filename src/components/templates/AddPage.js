@@ -1,9 +1,11 @@
 "use client";
+
 import styles from "@/components/templates/Add.module.css";
 import { useState } from "react";
 import TextInput from "../modules/TextInput";
 import RadioItem from "../modules/RadioItem";
 import OptionsItem from "../modules/OptionsItem";
+import CustomDatePicker from "../modules/CustomDatePicker";
 
 function AddPage(props) {
   const [data, setData] = useState({
@@ -66,7 +68,6 @@ function AddPage(props) {
             setData={setData}
           />
         </div>
-
         <h4>دسته بندی</h4>
         <div className={styles.category}>
           <RadioItem title="ویلا" name="villa" data={data} setData={setData} />
@@ -86,10 +87,11 @@ function AddPage(props) {
         </div>
         <h4>امکانات رفاهی</h4>
         <div className={styles.options}>
-          <OptionsItem data={data} setData={setData} type="amenities" />
+          <OptionsItem data={data} setData={setData} name="amenities" />
           <h4>قوانین</h4>
-          <OptionsItem data={data} setData={setData} type="rules" />
+          <OptionsItem data={data} setData={setData} name="rules" />
         </div>
+        <CustomDatePicker data={data} setData={setData} />
         <div className={styles.add} onClick={addHandler}>
           ثبت آگهی
         </div>

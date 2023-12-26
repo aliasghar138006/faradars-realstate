@@ -1,23 +1,25 @@
 import styles from "@/components/templates/Add.module.css";
 
-function OptionsItem({ data, setData, type }) {
+function OptionsItem({ data, name, setData }) {
   const changeHandler = (e, index) => {
     const { value } = e.target;
-    const advertisingOptions = [...data[type]];
+    const advertisingOptions = [...data[name]];
     advertisingOptions[index] = value;
-    setData({ ...data, [type]: advertisingOptions });
+    setData({ ...data, [name]: advertisingOptions });
   };
+
   const addHandler = () => {
-    setData({ ...data, [type]: [...data[type], ""] });
+    setData({ ...data, [name]: [...data[name], ""] });
   };
+
   const deleteHandler = (e, index) => {
-    const advertisingOptions = [...data[type]];
+    const advertisingOptions = [...data[name]];
     advertisingOptions.splice(index, 1);
-    setData({ ...data, [type]: advertisingOptions });
+    setData({ ...data, [name]: advertisingOptions });
   };
   return (
     <>
-      {data[type].map((item, index) => (
+      {data[name].map((item, index) => (
         <div key={index}>
           <input
             type="text"
