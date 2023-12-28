@@ -9,7 +9,9 @@
 }
 
 .container p {
+    padding: 5px 30px;
     color: rgb(121, 32, 32);
+    background-color: white;
 }
 
 .btn {

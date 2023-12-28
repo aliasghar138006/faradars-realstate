@@ -1,11 +1,10 @@
-import React from "react";
-import Card from "../modules/Card";
-import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import User from "@/models/User";
 import styles from "@/components/templates/MyAdvertising.module.css";
+import User from "@/models/User";
+import { getServerSession } from "next-auth";
+import Card from "../modules/Card";
 
-async function MyAdvertisingPage() {
+async function MyAdvertisingPage(props) {
   const session = await getServerSession(authOptions);
   const [user] = await User.aggregate([
     { $match: { email: session.user.email } },
@@ -20,13 +19,14 @@ async function MyAdvertisingPage() {
   ]);
 
   const { myAdvertising } = user;
-  console.log(myAdvertising);
+
   return (
     <div className={styles.container}>
-      {myAdvertising.length ? null : <p>آگهی وجود ندارد ابتدا آگهی ثبت کنید</p>}
+      {myAdvertising.length ? null : <span>هیچ آگهی ثبت نشده است</span>}
       {myAdvertising.map((item) => (
         <Card
           key={item._id}
+          id={item._id}
           title={item.title}
           location={item.location}
           price={item.price}

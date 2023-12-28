@@ -1,13 +1,16 @@
 "use client";
 
 import styles from "@/components/templates/Add.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TextInput from "../modules/TextInput";
 import RadioItem from "../modules/RadioItem";
 import OptionsItem from "../modules/OptionsItem";
 import CustomDatePicker from "../modules/CustomDatePicker";
+import toast, { Toaster } from "react-hot-toast";
+import { useRouter } from "next/navigation";
 
-function AddPage(props) {
+function AddPage({ advertisingData }) {
+  const router = useRouter();
   const [data, setData] = useState({
     title: "",
     description: "",
@@ -20,6 +23,29 @@ function AddPage(props) {
     amenities: [],
     rules: [],
   });
+
+  useEffect(() => {
+    if (advertisingData) {
+      setData(advertisingData);
+    }
+  }, []);
+  const editHandler = async () => {
+    const res = await fetch("/api/advertising", {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    });
+    const result = await res.json();
+    if (result.status === 200) {
+      toast.success(result.message);
+      router.push("/account/my-advertising");
+      router.refresh();
+    } else {
+      toast.error(result.message);
+    }
+  };
   const addHandler = async () => {
     const res = await fetch("/api/advertising", {
       method: "POST",
@@ -29,11 +55,16 @@ function AddPage(props) {
       body: JSON.stringify(data),
     });
     const result = await res.json();
-    console.log(result);
+    if (result.status === 201) {
+      toast.success(result.message);
+      router.push("/account/my-advertising");
+    } else {
+      toast.error(result.message);
+    }
   };
   return (
     <div className={styles.container}>
-      <h3>ثبت آگهی</h3>
+      {advertisingData ? <h3>ویرایش آگهی</h3> : <h3>ثبت آگهی</h3>}
       <form>
         <div className={styles.fields}>
           <TextInput
@@ -92,10 +123,17 @@ function AddPage(props) {
           <OptionsItem data={data} setData={setData} name="rules" />
         </div>
         <CustomDatePicker data={data} setData={setData} />
-        <div className={styles.add} onClick={addHandler}>
-          ثبت آگهی
-        </div>
+        {advertisingData ? (
+          <div className={styles.add} onClick={editHandler}>
+            ویرایش آگهی
+          </div>
+        ) : (
+          <div className={styles.add} onClick={addHandler}>
+            ثبت آگهی
+          </div>
+        )}
       </form>
+      <Toaster />
     </div>
   );
 }

@@ -1,4 +1,3 @@
-import AccountPage from "@/components/templates/AccountPage";
 import AddPage from "@/components/templates/AddPage";
 import React from "react";
 

@@ -5,7 +5,7 @@
     gap: 50px;
 }
 
-.container p {
+.container span {
     background-color: rgb(206, 64, 64);
     color: white;
     border-radius: 10px;

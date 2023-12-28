@@ -1,9 +1,11 @@
 import styles from "@/components/modules/Card.module.css";
 import { sp } from "@/utils/operations/Number";
+import Link from "next/link";
 import { FaEye } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
-function Card({ title, location, price }) {
+
+function Card({ id, title, location, price }) {
   return (
     <div className={styles.container}>
       <div>
@@ -15,9 +17,11 @@ function Card({ title, location, price }) {
         <div>
           <FaEye />
         </div>
-        <div>
-          <MdEdit />
-        </div>
+        <Link href={`/account/edit/${id}`}>
+          <div>
+            <MdEdit />
+          </div>
+        </Link>
         <div>
           <MdDelete />
         </div>
