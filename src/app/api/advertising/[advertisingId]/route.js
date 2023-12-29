@@ -4,7 +4,7 @@ import Connect from "@/utils/Connect";
 import { getServerSession } from "next-auth";
 import { NextResponse } from "next/server";
 
-export async function DELETE(req, { params: advertisingId }) {
+export async function DELETE(req, { params: { advertisingId } }) {
   try {
     const session = await getServerSession(req);
     if (!session) {

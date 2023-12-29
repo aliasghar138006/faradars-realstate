@@ -6,11 +6,10 @@ import TextInput from "../modules/TextInput";
 import RadioItem from "../modules/RadioItem";
 import OptionsItem from "../modules/OptionsItem";
 import CustomDatePicker from "../modules/CustomDatePicker";
-import toast, { Toaster } from "react-hot-toast";
 import { useRouter } from "next/navigation";
+import toast, { Toaster } from "react-hot-toast";
 
 function AddPage({ advertisingData }) {
-  const router = useRouter();
   const [data, setData] = useState({
     title: "",
     description: "",
@@ -24,11 +23,14 @@ function AddPage({ advertisingData }) {
     rules: [],
   });
 
+  const router = useRouter();
+
   useEffect(() => {
     if (advertisingData) {
       setData(advertisingData);
     }
   }, []);
+
   const editHandler = async () => {
     const res = await fetch("/api/advertising", {
       method: "PATCH",
@@ -46,6 +48,7 @@ function AddPage({ advertisingData }) {
       toast.error(result.message);
     }
   };
+
   const addHandler = async () => {
     const res = await fetch("/api/advertising", {
       method: "POST",
@@ -58,6 +61,7 @@ function AddPage({ advertisingData }) {
     if (result.status === 201) {
       toast.success(result.message);
       router.push("/account/my-advertising");
+      router.refresh();
     } else {
       toast.error(result.message);
     }
@@ -123,6 +127,7 @@ function AddPage({ advertisingData }) {
           <OptionsItem data={data} setData={setData} name="rules" />
         </div>
         <CustomDatePicker data={data} setData={setData} />
+
         {advertisingData ? (
           <div className={styles.add} onClick={editHandler}>
             ویرایش آگهی

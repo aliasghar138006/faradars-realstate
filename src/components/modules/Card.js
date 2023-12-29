@@ -1,11 +1,27 @@
+"use client";
 import styles from "@/components/modules/Card.module.css";
 import { sp } from "@/utils/operations/Number";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 import { FaEye } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
-function Card({ id, title, location, price }) {
+function Card({ data: { _id, title, location, price } }) {
+  const router = useRouter();
+  const deleteHandler = async () => {
+    const res = await fetch(`/api/advertising/${_id}`, {
+      method: "DELETE",
+    });
+    const result = await res.json();
+    if (result.status === 200) {
+      toast.success(result.message);
+      router.refresh();
+    } else {
+      toast.error(result.message);
+    }
+  };
   return (
     <div className={styles.container}>
       <div>
@@ -17,12 +33,14 @@ function Card({ id, title, location, price }) {
         <div>
           <FaEye />
         </div>
-        <Link href={`/account/edit/${id}`}>
+
+        <Link href={`/account/edit/${_id}`}>
           <div>
             <MdEdit />
           </div>
         </Link>
-        <div>
+
+        <div onClick={deleteHandler}>
           <MdDelete />
         </div>
       </div>
