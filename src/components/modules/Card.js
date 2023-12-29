@@ -14,6 +14,7 @@ function Card({ data: { _id, title, location, price } }) {
     const res = await fetch(`/api/advertising/${_id}`, {
       method: "DELETE",
     });
+
     const result = await res.json();
     if (result.status === 200) {
       toast.success(result.message);

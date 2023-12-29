@@ -1,0 +1,37 @@
+.container {
+    padding-top: 20px;
+    
+}
+.container h1 {
+    
+    width: fit-content;
+    margin: auto;
+    color: rgb(206, 64, 64);
+}
+
+.slider {
+    padding: 50px 0px;
+}
+
+.swiper-slide image {
+    border: 2px solid red;
+    border-radius: 30px;
+}
+
+.cities {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    margin: auto;
+    
+}
+
+.city {
+    padding: 5px 15px;
+    width: 70px;
+    text-align: center;
+    background-color: rgb(206, 64, 64);
+    color: white;
+    margin: 20px 30px;
+    border-radius: 10px;
+}
