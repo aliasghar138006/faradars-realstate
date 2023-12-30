@@ -6,6 +6,7 @@ import styles from "@/components/templates/Main.module.css";
 import "swiper/css";
 
 function MainPage() {
+  const cities = ["سمنان", "تهران", "مازندران", "کرج", "اصفهان", "مشهد"];
   return (
     <div className={styles.container}>
       <h1>خرید و فروش و معامله ملک</h1>
@@ -80,6 +81,14 @@ function MainPage() {
             />
           </SwiperSlide>
         </Swiper>
+      </div>
+      <h1>شهرهای پر بازدید</h1>
+      <div className={styles.cities}>
+        {cities.map((item) => (
+          <div className={styles.city} key={item}>
+            {item}
+          </div>
+        ))}
       </div>
     </div>
   );

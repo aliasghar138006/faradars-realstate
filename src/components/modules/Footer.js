@@ -7,10 +7,10 @@ function Footer() {
       <div className={styles.right}>
         <ul>
           <li>
-            <Link href="/buy-residential">آگهی ها</Link>
+            <Link href="/advertising">آگهی ها</Link>
           </li>
           <li>
-            <Link href="/create-residential">ثبت آگهی</Link>
+            <Link href="/account/add">ثبت آگهی</Link>
           </li>
           <li>
             <Link href="/about-us">معرفی سایت</Link>

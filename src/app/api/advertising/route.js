@@ -148,3 +148,16 @@ export async function PATCH(req) {
     return NextResponse.json({ status: 500, message: "server errror" });
   }
 }
+
+export async function GET(req) {
+  try {
+    await Connect();
+    const advertising = await Advertising.find({ published: true }).select(
+      "-userId"
+    );
+    return NextResponse.json({ status: 200, data: advertising });
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json({ status: 500, message: "server error!" });
+  }
+}

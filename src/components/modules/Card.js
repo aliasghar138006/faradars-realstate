@@ -8,7 +8,7 @@ import { FaEye } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
-function Card({ data: { _id, title, location, price } }) {
+function Card({ data: { _id, title, location, price }, operation = true }) {
   const router = useRouter();
   const deleteHandler = async () => {
     const res = await fetch(`/api/advertising/${_id}`, {
@@ -30,21 +30,25 @@ function Card({ data: { _id, title, location, price } }) {
         <p>{location}</p>
         <p>{sp(price)} تومان</p>
       </div>
-      <div className={styles.btn}>
-        <div>
-          <FaEye />
-        </div>
-
-        <Link href={`/account/edit/${_id}`}>
+      {operation ? (
+        <div className={styles.btn}>
           <div>
-            <MdEdit />
+            <FaEye />
           </div>
-        </Link>
 
-        <div onClick={deleteHandler}>
-          <MdDelete />
+          <Link href={`/account/edit/${_id}`}>
+            <div>
+              <MdEdit />
+            </div>
+          </Link>
+
+          <div onClick={deleteHandler}>
+            <MdDelete />
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className={styles.details}>جزییات آگهی</div>
+      )}
     </div>
   );
 }

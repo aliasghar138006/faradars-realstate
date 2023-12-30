@@ -10,7 +10,7 @@ function Header() {
     <div className={styles.container}>
       <div className={styles.right}>
         <Link href="/">صفحه اصلی</Link>
-        <Link href="/buy-residential">آگهی ها</Link>
+        <Link href="/advertising">آگهی ها</Link>
       </div>
       <div className={styles.left}>
         <div className={styles.login}>
