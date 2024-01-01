@@ -158,6 +158,6 @@ export async function GET(req) {
     return NextResponse.json({ status: 200, data: advertising });
   } catch (error) {
     console.log(error);
-    return NextResponse.json({ status: 500, message: "server error!" });
+    return NextResponse.json({ status: 500, message: "server error" });
   }
 }

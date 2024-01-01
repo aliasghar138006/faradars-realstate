@@ -4,4 +4,51 @@
     width: 1000px;
     gap: 10px;
     flex-wrap: wrap;
+    position: relative;
+}
+
+.container span {
+    background-color: rgb(206, 64, 64);
+    color: white;
+    padding: 10px;
+    margin: auto;
+    border-radius: 7px;
+}
+
+.filter {
+    position: absolute;
+    top: -35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter select {
+    margin-right: 50px;
+    background-color: rgb(206, 64, 64);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.filter div {
+    color: rgb(206, 64, 64);
+    font-weight: bold;
+}
+
+.options {
+    display: flex;
+    
+}
+
+.options div {
+    margin-right: 30px;
+    background-color: rgb(206, 64, 64);
+    color: white;
+    padding: 2px 15px;
+    border-radius: 7px;
+    cursor: pointer;
 }

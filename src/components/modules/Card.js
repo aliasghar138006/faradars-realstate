@@ -8,7 +8,7 @@ import { FaEye } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
-function Card({ data: { _id, title, location, price }, operation = true }) {
+function Card({ data: { _id, title, location, price }, operations = true }) {
   const router = useRouter();
   const deleteHandler = async () => {
     const res = await fetch(`/api/advertising/${_id}`, {
@@ -30,7 +30,7 @@ function Card({ data: { _id, title, location, price }, operation = true }) {
         <p>{location}</p>
         <p>{sp(price)} تومان</p>
       </div>
-      {operation ? (
+      {operations ? (
         <div className={styles.btn}>
           <div>
             <FaEye />
