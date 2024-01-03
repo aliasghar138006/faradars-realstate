@@ -1,0 +1,33 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 30px 0px;
+    padding: 20px 50px;
+    border: 2px solid rgb(206, 64, 64);
+    border-radius: 10px;
+}
+
+.container h3 {
+    color: rgb(206, 64, 64);
+}
+
+.container span {
+    padding: 3px 10px;
+    background-color: rgb(206, 64, 64);
+    border-radius: 7px;
+    color: white;
+}
+
+.sidebar {
+    padding: 10px;
+    background-color: rgb(206, 64, 64);
+    border-radius: 7px;
+    color: white;
+}
+
+.sidebar div {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 5px;
+}

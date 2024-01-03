@@ -2,16 +2,16 @@
 import styles from "@/components/templates/Advertising.module.css";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
-function Filter(props) {
+
+function Filter() {
   const [query, setQuery] = useState({ category: "" });
   const router = useRouter();
-
   const changeHandler = (e) => {
     setQuery({ ...query, category: e.target.value });
   };
   return (
     <div className={styles.options}>
-      <select name="category" onChange={changeHandler}>
+      <select onChange={changeHandler}>
         <option value="">همه</option>
         <option value="villa">ویلا</option>
         <option value="appartment">آپارتمان</option>

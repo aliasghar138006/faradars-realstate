@@ -22,7 +22,7 @@ async function AdvertisingPage({ searchParams }) {
         <div>فیلتر بر اساس دسته بندی:</div>
         <Filter />
       </div>
-      {finalData ? (
+      {finalData.length ? (
         finalData.map((item) => (
           <Card key={item._id} data={item} operations={false} />
         ))

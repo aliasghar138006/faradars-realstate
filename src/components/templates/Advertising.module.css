@@ -11,7 +11,7 @@
     background-color: rgb(206, 64, 64);
     color: white;
     padding: 10px;
-    margin: auto;
+    margin: 200px auto;
     border-radius: 7px;
 }
 
@@ -41,7 +41,6 @@
 
 .options {
     display: flex;
-    
 }
 
 .options div {

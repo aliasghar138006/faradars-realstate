@@ -32,9 +32,11 @@ function Card({ data: { _id, title, location, price }, operations = true }) {
       </div>
       {operations ? (
         <div className={styles.btn}>
-          <div>
-            <FaEye />
-          </div>
+          <Link href={`/advertising/${_id}`}>
+            <div>
+              <FaEye />
+            </div>
+          </Link>
 
           <Link href={`/account/edit/${_id}`}>
             <div>
@@ -47,7 +49,9 @@ function Card({ data: { _id, title, location, price }, operations = true }) {
           </div>
         </div>
       ) : (
-        <div className={styles.details}>جزییات آگهی</div>
+        <Link href={`/advertising/${_id}`}>
+          <div className={styles.details}>جزییات آگهی</div>
+        </Link>
       )}
     </div>
   );
