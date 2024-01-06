@@ -14,6 +14,7 @@ function Sidebar(props) {
         <Link href="/account">داشبورد</Link>
         <Link href="/account/my-advertising">آگهی های من</Link>
         <Link href="/account/add">ثبت آگهی</Link>
+        <Link href="/account/admin">تایید آگهی</Link>
         <Link href="/signin" onClick={signOut}>
           خروج
         </Link>

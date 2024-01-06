@@ -15,6 +15,7 @@
 .container span {
     padding: 3px 10px;
     background-color: rgb(206, 64, 64);
+    margin-right: 5px;
     border-radius: 7px;
     color: white;
 }

@@ -21,7 +21,6 @@ function DetailPage({ advertisingData }) {
     createdAt,
     location,
   } = advertisingData;
-  console.log(constructionDate);
   return (
     <div className={styles.container}>
       <div className={styles.main}>

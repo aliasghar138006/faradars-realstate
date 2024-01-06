@@ -1,0 +1,11 @@
+.container {
+    width: 700px;
+}
+
+.container span {
+    margin-right: 35%;
+    padding: 3px 10px;
+    border-radius: 7px;
+    background-color: rgb(206, 64, 64);
+    color: white;
+}
