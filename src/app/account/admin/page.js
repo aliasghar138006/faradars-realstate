@@ -1,7 +1,6 @@
 import AdminPage from "@/components/templates/AdminPage";
 import Advertising from "@/models/Advertising";
 import Connect from "@/utils/Connect";
-import React from "react";
 
 async function page() {
   await Connect();

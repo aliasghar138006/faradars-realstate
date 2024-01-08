@@ -16,9 +16,17 @@
 }
 
 .icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 10px;
     color:  white;
     font-size: 50px;
     text-align: center;
+}
+
+.icon span {
+    font-size: 20px;
 }
 
 .menu {
