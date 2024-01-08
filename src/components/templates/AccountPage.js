@@ -1,6 +1,5 @@
 import styles from "@/components/templates/Account.module.css";
 import Sidebar from "../modules/Sidebar";
-import { getServerSession } from "next-auth";
 
 function AccountPage({ children, role }) {
   return (

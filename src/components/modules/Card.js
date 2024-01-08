@@ -8,7 +8,11 @@ import { FaEye } from "react-icons/fa";
 import { MdEdit } from "react-icons/md";
 import { MdDelete } from "react-icons/md";
 
-function Card({ data: { _id, title, location, price }, operations = true }) {
+function Card({
+  data: { _id, title, location, price },
+  operations = true,
+  role = "USER",
+}) {
   const router = useRouter();
   const deleteHandler = async () => {
     const res = await fetch(`/api/advertising/${_id}`, {
@@ -30,28 +34,35 @@ function Card({ data: { _id, title, location, price }, operations = true }) {
         <p>{location}</p>
         <p>{sp(price)} تومان</p>
       </div>
-      {operations ? (
-        <div className={styles.btn}>
-          <Link href={`/advertising/${_id}`}>
-            <div>
-              <FaEye />
-            </div>
-          </Link>
+      {role === "USER" ? (
+        operations ? (
+          <div className={styles.btn}>
+            <Link href={`/advertising/${_id}`}>
+              <div>
+                <FaEye />
+              </div>
+            </Link>
 
-          <Link href={`/account/edit/${_id}`}>
-            <div>
-              <MdEdit />
-            </div>
-          </Link>
+            <Link href={`/account/edit/${_id}`}>
+              <div>
+                <MdEdit />
+              </div>
+            </Link>
 
-          <div onClick={deleteHandler}>
-            <MdDelete />
+            <div onClick={deleteHandler}>
+              <MdDelete />
+            </div>
           </div>
-        </div>
+        ) : (
+          <Link href={`/advertising/${_id}`}>
+            <div className={styles.details}>جزییات آگهی</div>
+          </Link>
+        )
       ) : (
-        <Link href={`/advertising/${_id}`}>
-          <div className={styles.details}>جزییات آگهی</div>
-        </Link>
+        <div className={styles.admin}>
+          <div>حذف آگهی</div>
+          <div>انتشار آگهی</div>
+        </div>
       )}
     </div>
   );

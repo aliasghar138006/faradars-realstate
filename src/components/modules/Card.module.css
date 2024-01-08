@@ -50,3 +50,16 @@
     color: white;
     cursor: pointer;
 }
+
+.admin {
+    margin-top: 30px;
+}
+
+.admin div {
+    background-color: rgb(206, 64, 64);
+    padding: 5px;
+    color: white;
+    margin: 20px 0px;
+    border-radius: 7px;
+    cursor: pointer;
+}
