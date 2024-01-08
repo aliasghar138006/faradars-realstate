@@ -27,6 +27,22 @@ function Card({
       toast.error(result.message);
     }
   };
+
+  const publishHandler = async () => {
+    const res = await fetch(`/api/admin/${_id}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const result = await res.json();
+    if (result.status === 200) {
+      toast.success(result.message);
+      router.refresh();
+    } else {
+      toast.error(toast.message);
+    }
+  };
   return (
     <div className={styles.container}>
       <div>
@@ -60,8 +76,11 @@ function Card({
         )
       ) : (
         <div className={styles.admin}>
-          <div>حذف آگهی</div>
-          <div>انتشار آگهی</div>
+          <Link href={`/advertising/${_id}`}>
+            <div>مشاهده آگهی</div>
+          </Link>
+          <div onClick={deleteHandler}>حذف آگهی</div>
+          <div onClick={publishHandler}>انتشار آگهی</div>
         </div>
       )}
     </div>
