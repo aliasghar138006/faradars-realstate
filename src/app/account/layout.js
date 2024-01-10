@@ -14,3 +14,18 @@ export default async function AccountLayout({ children }) {
     </div>
   );
 }
+
+export const generateMetadata = async () => {
+  const session = await getServerSession(authOptions);
+  if (!session) redirect("/signin");
+  const { role } = await User.findOne({ email: session.user.email });
+  if (role === "ADMIN") {
+    return {
+      title: "پنل کاربری ادمین",
+    };
+  } else {
+    return {
+      title: "پنل کاربری",
+    };
+  }
+};

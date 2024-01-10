@@ -8,7 +8,13 @@ function AdminPage({ advertisingData }) {
       {!advertisingData ? (
         <span>آگهی در انتظار تاییدی وجود ندارد</span>
       ) : (
-        <Card data={JSON.parse(JSON.stringify(advertisingData))} role="ADMIN" />
+        advertisingData.map((item) => (
+          <Card
+            key={item._id}
+            data={JSON.parse(JSON.stringify(item))}
+            role="ADMIN"
+          />
+        ))
       )}
       <Toaster />
     </div>

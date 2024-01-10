@@ -35,12 +35,13 @@ function Card({
         "Content-Type": "application/json",
       },
     });
+
     const result = await res.json();
     if (result.status === 200) {
       toast.success(result.message);
       router.refresh();
     } else {
-      toast.error(toast.message);
+      toast.error(result.message);
     }
   };
   return (

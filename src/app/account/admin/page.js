@@ -11,7 +11,7 @@ async function page() {
   await Connect();
   const { role } = await User.findOne({ email: session.user.email });
   if (role !== "ADMIN") redirect("/account");
-  const advertisingData = await Advertising.findOne({ published: false });
+  const advertisingData = await Advertising.find({ published: false });
   return <AdminPage advertisingData={advertisingData} />;
 }
 
